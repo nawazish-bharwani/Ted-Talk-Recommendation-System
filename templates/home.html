@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<htmL>
+
+<head>
+    <title>TED Talk - Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <h2>TED TALK RECOMMENDATION SYSTEM</h2>
+        </div>
+        <div class="input section">
+            <form action="{{ url_for('predict')}}" method="POST">
+                <h3>TED Talk Name: </h3>
+                <input type="text" class="ip" name="ted-talk" placeholder="Enter TED Talk Name"><br>
+                <button class="sub-button" value="submit">Submit</button>
+            </form>
+        </div>
+        <div class="output">
+            <div class="output-text">{{ prediction_text }}</div>
+        </div>
+        <div class="main">
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="contact_details">
+            <a target="_blank" href="https://github.com/nawazish-bharwani "><i
+                    class="fab fa-github fa-lg contact-icon"></i></a>
+            <a target="_blank" href="www.linkedin.com/in/nawazish-bharwani"><i
+                    class="fab fa-linkedin fa-lg contact-icon"></i></a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+    let divMain = document.querySelector('.output');
+    let mainDiv = document.querySelector('.main');
+    let text = document.querySelector('.output-text').innerHTML;
+
+    let arr = text.split(',').join('/n');
+    arr2 = arr.split("/n")
+    console.log(arr)
+
+
+    arr2.forEach((e)=>{
+        let div = document.createElement('div');
+        div.innerHTML = `
+        <div class="rec">
+            <h4 id="z">${e}<h4>
+        </div>
+        `;
+        mainDiv.appendChild(div);
+    })
+    // let op = document.getElementById('.output-text').style.display = "none";
+        
+</script>
+
+</html>

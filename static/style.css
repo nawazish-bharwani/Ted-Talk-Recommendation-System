@@ -1,0 +1,27 @@
+.container
+{
+    text-align: center;
+    padding: 50px;
+    background-image: linear-gradient(teal,white);
+}
+.output
+{
+    display: none;
+}
+.ip 
+{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.input-section 
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-button
+{
+    margin: 15px;
+    padding: 5px;
+    color:black ;
+}
