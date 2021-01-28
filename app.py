@@ -21,7 +21,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        user_ted_talk = request.form['ted-talk']
+        user_ted_talk = request.form['ted-talk'].lower()
         user_ted_talk_no_tags = remove_tags(user_ted_talk)
         recommendation = recommend_talks(user_ted_talk_no_tags)
         rec = str(recommendation)[1:-1]
