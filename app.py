@@ -3,7 +3,7 @@ import pickle
 import re
 import pandas as pd
 
-df = pd.read_csv('/home/blaze/Data Science/DataSets/TED.csv')
+df = pd.read_csv('Data/TED.csv')
 
 df.loc[:, 'title'] = df.loc[:, 'title'].str.lower()
 
